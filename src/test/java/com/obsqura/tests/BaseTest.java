@@ -21,6 +21,7 @@ import com.obsqura.pages.ProductsPage;
 import com.obsqura.utilities.TestProperties;
 
 import context.WebdriverContext;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class BaseTest {
@@ -41,7 +42,9 @@ public class BaseTest {
 		}
 
 		else if (browserName.equals("Edge")) {
-			driver = new EdgeDriver();
+			//driver = new EdgeDriver();
+			driver = WebDriverManager.edgedriver().create();
+
 		} else if (browserName.equals("Firefox")) {
 			driver = new FirefoxDriver();
 		} else {
